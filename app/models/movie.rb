@@ -4,6 +4,6 @@ class Movie < ActiveRecord::Base
   end
   
   def self.find_similar_movies_to(movie)
-    Movie.find(:all, :conditions => ["director = ?", movie.director])
+    Movie.where(:director => movie.director)
   end
 end
